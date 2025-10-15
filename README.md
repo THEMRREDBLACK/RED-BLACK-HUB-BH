@@ -1,5 +1,4 @@
--- KEY FODASTICA
-
+-- Função para verificar a key
 function verificarKey(key)
     return key == "RBH-5F8D2B7C-9A4E-4C3F-8B1D-2E6A7C9F0B3D-NIG4-NIG3R_66665817"
 end
@@ -9,15 +8,15 @@ local keyValida = false
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "🎩RED BLACK HUB-BROOKHAVEN🎩", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
--- KEY ABA
+-- Aba de Key
 local TabKey = Window:MakeTab({
     Name = "KEY",
-    Icon = "rbxassetid://134079269839821",
+    Icon = "rbxassetid://87117402316439",
     PremiumOnly = false
 })
 
 TabKey:AddTextbox({
-    Name = "INSIRA SUA KEY:",
+    Name = "Insira sua KEY:",
     Default = "",
     TextDisappear = false,
     Callback = function(text)
@@ -54,7 +53,7 @@ TabKey:AddButton({
 
 repeat wait() until keyValida
 
--- imagem foda da rbc
+-- 📸 Splash com fade in/out (4s total)
 do
     local TweenService = game:GetService("TweenService")
     local CoreGui = game:GetService("CoreGui")
@@ -350,6 +349,13 @@ Tab3:AddButton({
 })
 
 Tab3:AddButton({
+    Name = "RADIATOR PLAYER",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/THEMRREDBLACK/PLAYER-RADIATOR/refs/heads/main/README.md"))()
+    end
+})
+
+Tab3:AddButton({
     Name = "BRING RED BLACK",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/THEMRREDBLACK/Bring-red-black-v2/refs/heads/main/README.md"))()
@@ -364,14 +370,21 @@ Tab3:AddButton({
 })
 
 Tab3:AddButton({
-    Name = "PRISON RED BLACK ",
+    Name = "PRISON RED BLACK",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/THEMRREDBLACK/PRISON-RED-BLACK-/refs/heads/main/README.md"))()
     end
 })
 
 Tab3:AddButton({
-    Name = "PEGAR SOFÁ",
+    Name = "VOIDKILL PLAYER",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/THEMRREDBLACK/KILL-PLAYER-V3/refs/heads/main/README.md"))()
+    end
+})
+
+Tab3:AddButton({
+    Name = "PEGAR SOFÁ(NECESSARIO)",
     Callback = function()
         local player = game.Players.LocalPlayer
         if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
@@ -646,15 +659,4 @@ TabChat:AddButton({
     end
 })
 
-TabChat:AddButton({
-    Name = "PLACA GIGANTE 1",
-    Callback = function()
-        local player = game.Players.LocalPlayer
-        if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-            player.Character.HumanoidRootPart.CFrame = CFrame.new(-238, 88, -549)
-            print("Teletransportado para as coordenadas: X: -238, Y: 88, Z: -549")
-        else
-            print("Não foi possível teletransportar.")
-        end
-    end
-})
+
