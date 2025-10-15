@@ -1,4 +1,5 @@
 -- KEY FODASTICA
+
 function verificarKey(key)
     return key == "RBH-5F8D2B7C-9A4E-4C3F-8B1D-2E6A7C9F0B3D-NIG4-NIG3R_66665817"
 end
