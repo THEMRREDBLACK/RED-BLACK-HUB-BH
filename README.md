@@ -253,46 +253,6 @@ local Tab2 = Window:MakeTab({
 })
 
 Tab2:AddButton({
-    Name = "GET GLOCK",
-    Callback = function()
-        local Players = game:GetService("Players")
-        local LocalPlayer = Players.LocalPlayer
-        local Backpack = LocalPlayer:WaitForChild("Backpack")
-        local StarterPack = game:GetService("StarterPack")
-        local Workspace = game:GetService("Workspace")
-
-        -- Tenta encontrar o item "Glock" no jogo
-        local glock = nil
-
-        -- 1️⃣ Procura no StarterPack
-        if StarterPack:FindFirstChild("Glock") then
-            glock = StarterPack.Glock:Clone()
-
-        -- 2️⃣ Ou tenta achar no Workspace
-        elseif Workspace:FindFirstChild("Glock") then
-            glock = Workspace.Glock:Clone()
-        end
-
-        if glock then
-            glock.Parent = Backpack
-            OrionLib:MakeNotification({
-                Name = "Red Black Hub",
-                Content = "🔫 Glock adicionada ao inventário!",
-                Image = "rbxassetid://7733658504",
-                Time = 4
-            })
-        else
-            OrionLib:MakeNotification({
-                Name = "Red Black Hub",
-                Content = "❌ Glock não encontrada no jogo.",
-                Image = "rbxassetid://7733658504",
-                Time = 4
-            })
-        end
-    end
-})
-
-Tab2:AddButton({
     Name = "Equipar Todos os Itens",
     Callback = function()
         equipAllItems()
@@ -389,8 +349,6 @@ Tab3:AddButton({
         loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\107\105\119\105\57\57\57\45\98\108\105\112\47\65\106\106\115\106\115\107\115\107\47\114\101\102\115\47\104\101\97\100\115\47\109\97\105\110\47\82\69\65\68\77\69\46\109\100\34\41\41\40\41")()
     end
 })
-
-
 
 Tab3:AddButton({
     Name = "RADIATOR PLAYER",
@@ -637,4 +595,54 @@ function equipAllItems()
         local humanoid = character:FindFirstChildOfClass("Humanoid")
         for i, tool in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
             if tool:IsA("Tool") then
-       
+                humanoid:EquipTool(tool)
+                print("Item equipado: " .. tool.Name)
+            end
+        end
+    else
+        print("Personagem não encontrado ou não possui um Humanoid.")
+    end
+end
+
+local Tab7 = Window:MakeTab({
+    Name = "TIK TOK",
+    Icon = "rbxassetid://77458568185817",
+    PremiumOnly = false
+})
+
+Tab7:AddButton({
+    Name = "TIK TOK DO MR RED BLACK",
+    Callback = function()
+        setclipboard("THE_MR_RED_BLACK_OFC")
+    end
+})
+
+local Tab8 = Window:MakeTab({
+    Name = "OWNER SCRIPT",
+    Icon = "rbxassetid://133887216434541",
+    PremiumOnly = false
+})
+
+Tab8:AddLabel("THE MR RED BLACK SCRIPTS OWNER")
+Tab8:AddLabel("NOLY")
+Tab8:AddLabel("KALEBAO")
+Tab8:AddLabel("RYAN")
+Tab8:AddLabel("THECLOCKWORKDEV")
+
+local Tab9 = Window:MakeTab({
+    Name = "AVATAR️",
+    Icon = "rbxassetid://112208414782742",
+    PremiumOnly = false
+})
+
+Tab9:AddButton({
+    Name = "NOME DE RP RED BLACK MEMBER️",
+    Callback = function()
+        local args = {
+            [1] = "RolePlayName",
+            [2] = "🎩RED BLACK MEMBER🎩"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1RPNam1eTex1t"):FireServer(unpack(args))
+        print("Nome de RP definido: 🎩RED BLACK MEMBER🎩")
+    end
+})
