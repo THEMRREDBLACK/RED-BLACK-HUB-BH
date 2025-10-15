@@ -1,6 +1,6 @@
--- key legal
+-- Função para verificar a key
 function verificarKey(key)
-    return key == "RBH-5F8D2B7C-9A4E-4C3F-8B1D-2E6A7C9F0B3D-NIG4-NIG3R_66665817"
+    return key == "RBH-5F8D2B7C-9A4E-4C3F-8B1D-2E6A7C9F0B3D-NIG4-NIG3R_666.65817-B.3.N.1.C.1.0-KEY_2.0[✓]"
 end
 
 local keyValida = false
@@ -29,6 +29,8 @@ TabKey:AddTextbox({
         end
     end
 })
+
+TabKey:AddParagraph("SOBRE A KEY:","A key do script é unica, ou seja você só precisa pegar uma vez e deixar ela no clipboard fixada.a key troca de mês em mês então fique de olho nos anuncios do server. alias, convide o maximo de amigos para o servidor que você poderá participar de eventos valendo robux, e se conseguir, ajude o servidor dando Boost.")
 
 TabKey:AddButton({
     Name = "GET KEY",
@@ -139,7 +141,7 @@ tiro:Play()
 
 local args = {
     [1] = "RolePlayName",
-    [2] = "🚀✨RED BLACK HUB🚀✨"
+    [2] = "🚀✨USUARIO DE RED BLACK HUB🚀✨"
 }
 game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1RPNam1eTex1t"):FireServer(unpack(args))
 
@@ -245,9 +247,49 @@ Tab1:AddButton({
 })
 
 local Tab2 = Window:MakeTab({
-    Name = "TOOLS/LAG SERVER",
+    Name = "TOOLS",
     Icon = "rbxassetid://85371650668851",
     PremiumOnly = false
+})
+
+Tab2:AddButton({
+    Name = "GET GLOCK",
+    Callback = function()
+        local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+        local Backpack = LocalPlayer:WaitForChild("Backpack")
+        local StarterPack = game:GetService("StarterPack")
+        local Workspace = game:GetService("Workspace")
+
+        -- Tenta encontrar o item "Glock" no jogo
+        local glock = nil
+
+        -- 1️⃣ Procura no StarterPack
+        if StarterPack:FindFirstChild("Glock") then
+            glock = StarterPack.Glock:Clone()
+
+        -- 2️⃣ Ou tenta achar no Workspace
+        elseif Workspace:FindFirstChild("Glock") then
+            glock = Workspace.Glock:Clone()
+        end
+
+        if glock then
+            glock.Parent = Backpack
+            OrionLib:MakeNotification({
+                Name = "Red Black Hub",
+                Content = "🔫 Glock adicionada ao inventário!",
+                Image = "rbxassetid://7733658504",
+                Time = 4
+            })
+        else
+            OrionLib:MakeNotification({
+                Name = "Red Black Hub",
+                Content = "❌ Glock não encontrada no jogo.",
+                Image = "rbxassetid://7733658504",
+                Time = 4
+            })
+        end
+    end
 })
 
 Tab2:AddButton({
@@ -348,6 +390,8 @@ Tab3:AddButton({
     end
 })
 
+
+
 Tab3:AddButton({
     Name = "RADIATOR PLAYER",
     Callback = function()
@@ -417,7 +461,7 @@ Tab4:AddButton({
 })
 
 local Tab5 = Window:MakeTab({
-    Name = "EXIBIÇÕES/REJOIN",
+    Name = "EXIBIÇÕES/OUTROS",
     Icon = "rbxassetid://92600174218873",
     PremiumOnly = false
 })
@@ -593,70 +637,4 @@ function equipAllItems()
         local humanoid = character:FindFirstChildOfClass("Humanoid")
         for i, tool in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
             if tool:IsA("Tool") then
-                humanoid:EquipTool(tool)
-                print("Item equipado: " .. tool.Name)
-            end
-        end
-    else
-        print("Personagem não encontrado ou não possui um Humanoid.")
-    end
-end
-
-local Tab7 = Window:MakeTab({
-    Name = "TIK TOK",
-    Icon = "rbxassetid://77458568185817",
-    PremiumOnly = false
-})
-
-Tab7:AddButton({
-    Name = "TIK TOK DO MR RED BLACK",
-    Callback = function()
-        setclipboard("THE_MR_RED_BLACK_OFC")
-    end
-})
-
-local Tab8 = Window:MakeTab({
-    Name = "OWNER SCRIPT",
-    Icon = "rbxassetid://133887216434541",
-    PremiumOnly = false
-})
-
-Tab8:AddLabel("THE MR RED BLACK SCRIPTS OWNER")
-Tab8:AddLabel("NOLY")
-Tab8:AddLabel("KALEBAO")
-Tab8:AddLabel("RYAN")
-Tab8:AddLabel("THECLOCKWORKDEV")
-
-local Tab9 = Window:MakeTab({
-    Name = "AVATAR️",
-    Icon = "rbxassetid://112208414782742",
-    PremiumOnly = false
-})
-
-Tab9:AddButton({
-    Name = "NOME DE RP RED BLACK MEMBER️",
-    Callback = function()
-        local args = {
-            [1] = "RolePlayName",
-            [2] = "🎩RED BLACK MEMBER🎩"
-        }
-        game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1RPNam1eTex1t"):FireServer(unpack(args))
-        print("Nome de RP definido: 🎩RED BLACK MEMBER🎩")
-    end
-})
-
-local TabChat = Window:MakeTab({
-    Name = "CHAT",
-    Icon = "rbxassetid://126878062099997",
-    PremiumOnly = false
-})
-
-TabChat:AddButton({
-    Name = "CHAT BY PASS",
-    Callback = function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/Gazer-Ha/bruh/refs/heads/main/ImBadd1'))()
-        print("Script do tutorial executado")
-    end
-})
-
-
+       
