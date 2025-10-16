@@ -65,7 +65,7 @@ GetKeyButton.TextScaled = true
 -- Função para verificar a key
 CheckKeyButton.MouseButton1Click:Connect(function()
     if TextBox.Text == key then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/THEMRREDBLACK/RED-BLACK-HUB-BROOCKHAVEN-/refs/heads/main/README.md"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/THEMRREDBLACK/RED-BLACK-HUB-BROOCKHAVEN-V3/refs/heads/main/README.md"))() 
     else
         TextBox.Text = "Invalid Key!"
     end
