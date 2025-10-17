@@ -65,7 +65,7 @@ GetKeyButton.TextScaled = true
 -- Função para verificar a key
 CheckKeyButton.MouseButton1Click:Connect(function()
     if TextBox.Text == key then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/THEMRREDBLACK/RED-BLACK-HUB-BROOCKHAVEN-V3/refs/heads/main/README.md"))() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/THEMRREDBLACK/RED-BLACK-HUB-BROOCKHAVEN-V3-OBFUSCADO/refs/heads/main/obfuscated.lua.txt"))() 
     else
         TextBox.Text = "Invalid Key!"
     end
@@ -75,4 +75,5 @@ end)
 GetKeyButton.MouseButton1Click:Connect(function()
     setclipboard("https://discord.gg/hHC643Utpg")
     TextBox.Text = "Link copiado!"
+end)    TextBox.Text = "Link copiado!"
 end)
