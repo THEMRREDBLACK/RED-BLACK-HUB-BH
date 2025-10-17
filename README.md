@@ -75,5 +75,4 @@ end)
 GetKeyButton.MouseButton1Click:Connect(function()
     setclipboard("https://discord.gg/hHC643Utpg")
     TextBox.Text = "Link copiado!"
-end)    TextBox.Text = "Link copiado!"
 end)
